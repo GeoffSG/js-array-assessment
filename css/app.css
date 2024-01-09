@@ -306,4 +306,15 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+  background-color: #071531;
+  color: #F8F8F8;
 }/*# sourceMappingURL=app.css.map */

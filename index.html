@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Array Assessment</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="card">
+          <h1>Random Image Picker</h1>
+          <p>
+            This is a showcase of utilising to fetch data (an image) from an
+            external source, using an API.
+          </p>
+          <ol>
+            <li>Enter an email address to the top textbox.</li>
+            <li>Generate an image you wish to assign to that email address</li>
+            <li>
+              You may create another email address and set images to that, by
+              selecting, or searching for one in the input box.
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section>
+        <form class="form-email">
+          <div class="input-group">
+            <input type="email" name="email" id="email" />
+            <label for="email"></label>
+          </div>
+          <select name="selectEmail" id="selectEmail">
+            <option>G@G.com</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section>
+        <article class="form-image-picker">
+          <figure>
+            <img src="" alt="Random Image" />
+          </figure>
+        </article>
+        <!-- Random Image Picker -->
+      </section>
+      <section>
+        <!-- Email Selector -->
+      </section>
+    </main>
+  </body>
 </html>
