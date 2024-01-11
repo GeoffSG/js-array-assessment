@@ -1,0 +1,15 @@
+.gallery {
+    @include gold-border;
+    padding: 0 1rem;
+    width: 700px;
+    background-color: $gallery-bg;
+    &-container {
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+        height: 420px;
+    }
+}

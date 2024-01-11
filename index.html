@@ -9,7 +9,7 @@
   <body>
     <main>
       <section>
-        <div class="card">
+        <article class="card">
           <h1>Random Image Picker</h1>
           <p>
             This is a showcase of utilising to fetch data (an image) from an
@@ -23,30 +23,116 @@
               selecting, or searching for one in the input box.
             </li>
           </ol>
-        </div>
-      </section>
-      <section>
-        <form class="form-email">
-          <div class="input-group">
-            <input type="email" name="email" id="email" />
-            <label for="email"></label>
-          </div>
-          <select name="selectEmail" id="selectEmail">
-            <option>G@G.com</option>
-          </select>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section>
-        <article class="form-image-picker">
-          <figure>
-            <img src="" alt="Random Image" />
-          </figure>
         </article>
-        <!-- Random Image Picker -->
       </section>
       <section>
-        <!-- Email Selector -->
+        <article class="card">
+          <header>
+            <h2 class="h2"><span class="icon-gallery"></span> Gallery</h2>
+          </header>
+          <section class="section-main">
+            <section class="section-emails-list">
+              <div class="data-list">
+                <div class="input-group list-search">
+                  <label class="input-label" for="search">
+                    <span class="icon-search"></span>
+                  </label>
+                  <input
+                    class="input-text"
+                    type="search"
+                    name="search"
+                    id="search"
+                  />
+                </div>
+                <ul class="list-wrapper">
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                  <li class="list-item">example@domain.com</li>
+                </ul>
+                <form class="add-item-form">
+                  <div class="input-group input-group-email">
+                    <label class="input-label" for="email">
+                      <span class="icon-email"></span>
+                    </label>
+                    <input
+                      class="input-text"
+                      type="email"
+                      name="email"
+                      id="email"
+                    />
+                    <label class="input-label" for="email">
+                      <span class="icon-success"></span>
+                    </label>
+                  </div>
+                  <button class="button" type="submit" disabled><span class="icon-add"></span> Add Email</button>
+                </form>
+              </div>
+            </section>
+            <section class="section-gallery">
+              <div class="gallery-generator">
+                <img
+                  class="image"
+                  src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                  alt="Image"
+                />
+                <div class="button-group">
+                  <a class="button"><span class="icon-shuffle"></span> Generate Image</a>
+                  <a class="button"><span class="icon-save"></span> Save Image</a>
+                </div>
+              </div>
+              <!-- Gallery -->
+              <section class="gallery">
+                <div class="gallery-container">
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                  <img
+                    class="image"
+                    src="https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew"
+                    alt="Image"
+                  />
+                </div>
+              </section>
+            </section>
+          </section>
+        </article>
       </section>
     </main>
   </body>

@@ -1,0 +1,21 @@
+.button {
+    position: relative;
+    display: block;
+    padding: 1rem;
+    border: 0;
+    border-radius: 1rem;
+    background-color: $gold;
+    color: $black;
+    text-align: center;
+    &:hover {
+        background-color: $lightgold;
+    }
+    &:disabled {
+        background-color: $darkgold;
+    }
+
+    @include icon-style {
+        position: absolute;
+        right: 1rem;
+    }
+}

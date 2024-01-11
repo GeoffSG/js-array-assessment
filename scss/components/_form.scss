@@ -1,0 +1,27 @@
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: $blue;
+    
+    &:focus-within {
+        background-color: $darkblue;
+    }
+
+    .input-text {
+        background-color: transparent;
+        width: 100%;
+        color: $white;
+        border: 0;
+        padding: 1rem;
+        &:focus {
+            border: 0;
+            outline: 0;
+            background-color: $darkblue;
+        }
+    }
+
+    .input-label {
+        padding: 1rem;
+    }
+}

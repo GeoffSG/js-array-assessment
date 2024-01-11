@@ -1,0 +1,44 @@
+.data-list {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 40rem;
+
+    .list-search {
+        border-bottom: $gold-border;
+        border-radius: 0;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        .input-text:focus {
+            border-top-right-radius: 1rem;
+        }
+    }
+
+    .list-wrapper {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        background-color: $blue;
+    }
+
+    .list-item {
+        display: block;
+        list-style: none;
+        padding: 1rem;
+        background-color: $blue;
+        border-bottom: $default-border;
+        &:hover {
+            background-color: #385fac;
+        }
+    }
+
+    .add-item-form {
+        border-top: $gold-border;
+        .button {
+            border-radius: 0;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            width: 100%;
+        }
+    }
+}

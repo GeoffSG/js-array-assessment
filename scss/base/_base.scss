@@ -1,12 +1,15 @@
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+* {
+    box-sizing: border-box;
+}
 
-    height: 100vh;
-    
+body {
     background-color: $darkblue;
     color: $white;
+}
+
+main {
+    padding: 1rem;
+    margin: auto;
+    min-width: 300px;
+    max-width: 70rem;
 }

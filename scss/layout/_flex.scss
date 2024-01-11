@@ -1,0 +1,29 @@
+.flex {
+    display: flex;
+    // gap: 1rem;
+    &-col {
+        @extend .flex;
+        flex-direction: column;
+    }
+    &-row {
+        @extend .flex;
+        flex-direction: row;
+    }
+
+    &-grow {
+        @for $i from 1 through 4 {
+            &-#{$i} {
+                flex: $i;
+            }
+        }
+    }
+}
+
+.justify {
+    &-center {
+        justify-content: center;
+    }
+}
+.align-center {
+    align-items: center;
+}

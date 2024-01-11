@@ -1,3 +1,108 @@
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../../assets/icons/icomoon.eot?y1pc2i");
+  src: url("../../assets/icons/icomoon.eot?y1pc2i#iefix") format("embedded-opentype"), url("../../assets/icons/icomoon.ttf?y1pc2i") format("truetype"), url("../../assets/icons/icomoon.woff?y1pc2i") format("woff"), url("../../assets/icons/icomoon.svg?y1pc2i#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image:before {
+  content: "\e90d";
+}
+
+.icon-gallery:before {
+  content: "\e90e";
+}
+
+.icon-save:before {
+  content: "\e962";
+}
+
+.icon-search:before {
+  content: "\e986";
+}
+
+.icon-remove:before {
+  content: "\e9ac";
+}
+
+.icon-add:before {
+  content: "\ea0a";
+}
+
+.icon-shuffle:before {
+  content: "\ea30";
+}
+
+.icon-email:before {
+  content: "\e901";
+}
+
+.icon-success:before {
+  content: "\e902";
+}
+
+.icon-error:before {
+  content: "\e903";
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Milonga";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/milonga/v22/SZc53FHnIaK9W5kfTzTMkHrS.woff2) format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Milonga";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/milonga/v22/SZc53FHnIaK9W5kfTzrMkA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Slabo 13px";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/slabo13px/v15/11hEGp_azEvXZUdSBzzRQK6h2jkY.woff2) format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Slabo 13px";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/slabo13px/v15/11hEGp_azEvXZUdSBzzRQKCh2g.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -308,13 +413,236 @@ template {
   display: none;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  height: 100vh;
+* {
+  box-sizing: border-box;
+}
+
+body {
   background-color: #071531;
   color: #F8F8F8;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+  min-width: 300px;
+  max-width: 70rem;
+}
+
+.flex, .flex-row, .flex-col {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-grow-1 {
+  flex: 1;
+}
+.flex-grow-2 {
+  flex: 2;
+}
+.flex-grow-3 {
+  flex: 3;
+}
+.flex-grow-4 {
+  flex: 4;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+.w-75 {
+  width: 75%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
+}
+
+.section-main {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+.section-emails-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.section-gallery-generator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.section-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 40rem;
+}
+
+.button {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: #ceaa24;
+  color: #111111;
+  text-align: center;
+}
+.button:hover {
+  background-color: #eecd53;
+}
+.button:disabled {
+  background-color: #796312;
+}
+.button [class^=icon-], .button [class*=" icon-"] {
+  position: absolute;
+  right: 1rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.button-group .button {
+  width: 200px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  width: 100%;
+  min-width: 300px;
+  padding: 1rem;
+  border: 2px solid #ceaa24;
+  border-radius: 1rem;
+  background-color: #205AD5;
+  font-family: "Slabo 13px", serif;
+}
+.card h1, .card h2 {
+  text-align: center;
+  font-family: "Milonga", serif;
+}
+
+.data-list {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 40rem;
+}
+.data-list .list-search {
+  border-bottom: 2px solid #ceaa24;
+  border-radius: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.data-list .list-search .input-text:focus {
+  border-top-right-radius: 1rem;
+}
+.data-list .list-wrapper {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #0e285d;
+}
+.data-list .list-item {
+  display: block;
+  list-style: none;
+  padding: 1rem;
+  background-color: #0e285d;
+  border-bottom: 2px solid #111111;
+}
+.data-list .list-item:hover {
+  background-color: #385fac;
+}
+.data-list .add-item-form {
+  border-top: 2px solid #ceaa24;
+}
+.data-list .add-item-form .button {
+  border-radius: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #0e285d;
+}
+.input-group:focus-within {
+  background-color: #071531;
+}
+.input-group .input-text {
+  background-color: transparent;
+  width: 100%;
+  color: #F8F8F8;
+  border: 0;
+  padding: 1rem;
+}
+.input-group .input-text:focus {
+  border: 0;
+  outline: 0;
+  background-color: #071531;
+}
+.input-group .input-label {
+  padding: 1rem;
+}
+
+.gallery {
+  border: 2px solid #ceaa24;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  width: 700px;
+  background-color: #4c7ce4;
+}
+.gallery-container {
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  height: 420px;
+}
+
+.image {
+  border: 2px solid #111111;
+  border-radius: 1rem;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: #F8F8F8;
+  color: #111111;
+}
+
+.gallery-generator {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }/*# sourceMappingURL=app.css.map */

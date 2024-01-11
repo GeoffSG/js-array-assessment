@@ -1,0 +1,25 @@
+$default-border: 2px solid $black;
+$gold-border: 2px solid $gold;
+
+@mixin default-border {
+    border: $default-border;
+    @include default-border-radius;
+    @content;
+}
+
+@mixin default-border-radius {
+    border-radius: 1rem;
+    @content;
+}
+
+@mixin gold-border {
+    border: $gold-border;
+    @include default-border-radius;
+    @content;
+}
+
+@mixin gold-box {
+    @include gold-border;
+    padding: 1rem;
+    @content;
+}
