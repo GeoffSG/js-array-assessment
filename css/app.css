@@ -548,41 +548,41 @@ main {
   font-family: "Milonga", serif;
 }
 
-.data-list {
+.data-list-container {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   max-height: 40rem;
 }
-.data-list .list-search {
+.data-list-container .list-search {
   border-bottom: 2px solid #ceaa24;
   border-radius: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-.data-list .list-search .input-text:focus {
+.data-list-container .list-search .input-text:focus {
   border-top-right-radius: 1rem;
 }
-.data-list .list-wrapper {
+.data-list-container .data-list {
   margin: 0;
   padding: 0;
   overflow: auto;
   background-color: #0e285d;
 }
-.data-list .list-item {
+.data-list-container .list-item {
   display: block;
   list-style: none;
   padding: 1rem;
   background-color: #0e285d;
   border-bottom: 2px solid #111111;
 }
-.data-list .list-item:hover {
+.data-list-container .list-item:hover {
   background-color: #385fac;
 }
-.data-list .add-item-form {
+.data-list-container .add-item-form {
   border-top: 2px solid #ceaa24;
 }
-.data-list .add-item-form .button {
+.data-list-container .add-item-form .button {
   border-radius: 0;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
