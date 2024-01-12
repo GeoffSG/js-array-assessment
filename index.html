@@ -42,39 +42,29 @@
                     type="search"
                     name="search"
                     id="search"
+                    value=""
+                    placeholder="Search..."
                   />
                 </div>
-                <ul class="data-list">
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                  <li class="list-item">example@domain.com</li>
-                </ul>
+                <ul class="data-list"></ul>
                 <form class="add-item-form">
                   <div class="input-group input-group-email">
                     <label class="input-label" for="email">
                       <span class="icon-email"></span>
                     </label>
                     <input
-                      class="input-text"
+                      class="input-text txt-email"
                       type="email"
                       name="email"
                       id="email"
                     />
-                    <label class="input-label" for="email">
-                      <span class="icon-success"></span>
+                    <label id="email-status" class="input-label" for="email">
+                      <span class=""></span>
                     </label>
                   </div>
-                  <button class="button" type="submit" disabled><span class="icon-add"></span> Add Email</button>
+                  <button class="button btn-add" type="submit" disabled>
+                    <span class="icon-add"></span> Add Email
+                  </button>
                 </form>
               </div>
             </section>
@@ -86,8 +76,12 @@
                   alt="Image"
                 />
                 <div class="button-group">
-                  <a class="button"><span class="icon-shuffle"></span> Generate Image</a>
-                  <a class="button"><span class="icon-save"></span> Save Image</a>
+                  <a class="button"
+                    ><span class="icon-shuffle"></span> Generate Image</a
+                  >
+                  <a class="button"
+                    ><span class="icon-save"></span> Save Image</a
+                  >
                 </div>
               </div>
               <!-- Gallery -->

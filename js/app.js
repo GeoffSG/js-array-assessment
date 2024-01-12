@@ -1,8 +1,12 @@
-import DataList from "./components/datalist.js";
+import DataList from "./components/DataList.js";
+import DataController from "./controllers/DataController.js";
 
 function app() {
-    const dl = DataList($('.DataList'));
-    dl.inner();
+    const dataURL = "";
+    const dc = DataController(dataURL);
+    const dl = DataList(dc, $('.data-list'));
+    dl.init();
+    dl.render();
 }
 
 app();
