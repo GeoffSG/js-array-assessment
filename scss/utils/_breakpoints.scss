@@ -1,0 +1,62 @@
+@use "sass:list";
+
+$breakpoints: (
+    "mobile-s": 320px,
+    "mobile-m": 375px,
+    "mobile-l": 425px,
+    "tablet": 768px,
+    "laptop": 1024px,
+    "laptop-l": 1440px,
+    "desktop": 1920px,
+    "desktop-l": 2560px
+);
+
+@function get-breakpoint($bkpt) {
+    @return map-get($breakpoints, $bkpt);
+}
+
+@function map-next($list, $k) {
+    $keys: map-keys($list);
+    $i: index($keys, $k);
+    @return list.nth($keys, $i + 1);
+}
+
+@function map-prev($list, $k) {
+    $keys: map-keys($list);
+    $i: index($keys, $k);
+    @return list.nth($keys, $i - 1);
+}
+
+@function map-index-of($list, $k) {
+    $keys: map-keys($list);
+    @return index($keys, $k);
+}
+
+// Media queries
+@mixin mq($break, $max: false) {
+    @if map-has-key($breakpoints, $break) {
+        @if $max == true {
+            @media (max-width: (get-breakpoint($break))) {
+                @content;
+            }
+        } @else {
+            @media (min-width: (get-breakpoint($break))) {
+                @content;
+            }
+        }
+    } @else {
+        @error "ERROR: No valid value for `#{$break}`!";
+    }
+}
+
+h1 {
+    @include mq("mobile-s") {
+        color: red;
+    }
+    @include mq("mobile-m") {
+        color: blue;
+    }
+    @include mq("tablet") {
+        color: green;
+    }
+}

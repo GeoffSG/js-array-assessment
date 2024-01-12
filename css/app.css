@@ -103,6 +103,22 @@
   src: url(https://fonts.gstatic.com/s/slabo13px/v15/11hEGp_azEvXZUdSBzzRQKCh2g.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+@media (min-width: 320px) {
+  h1 {
+    color: red;
+  }
+}
+@media (min-width: 375px) {
+  h1 {
+    color: blue;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    color: green;
+  }
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -479,6 +495,7 @@ main {
 
 .section-main {
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 1rem;
 }
@@ -486,18 +503,6 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-.section-gallery-generator {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-.section-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  height: 40rem;
 }
 
 .button {
@@ -531,12 +536,7 @@ main {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: center;
   width: 100%;
-  min-width: 300px;
   padding: 1rem;
   border: 2px solid #ceaa24;
   border-radius: 1rem;
@@ -614,21 +614,54 @@ main {
   padding: 1rem;
 }
 
+.section-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 3;
+}
+
+.section-gallery-generator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+}
+
 .gallery {
   border: 2px solid #ceaa24;
   border-radius: 1rem;
   padding: 0 1rem;
-  width: 700px;
+  width: auto;
   background-color: #4c7ce4;
 }
-.gallery-container {
-  overflow-y: scroll;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.gallery .gallery-container {
+  overflow: auto;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
   gap: 1rem;
   padding: 1rem 0;
-  height: 420px;
+  height: 30rem;
+}
+@media (min-width: 768px) {
+  .gallery .gallery-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+@media (min-width: 1024px) {
+  .gallery .gallery-container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+.gallery-generator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
@@ -639,10 +672,4 @@ main {
   height: 200px;
   background-color: #F8F8F8;
   color: #111111;
-}
-
-.gallery-generator {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }/*# sourceMappingURL=app.css.map */
