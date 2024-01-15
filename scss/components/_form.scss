@@ -6,6 +6,9 @@
     
     &:focus-within {
         background-color: $darkblue;
+        & + .error-message {
+            background-color: $darkblue;
+        }
     }
 
     .input-text {
@@ -24,4 +27,19 @@
     .input-label {
         padding: 1rem;
     }
+
 }
+.error-message {
+    display: none;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    // background-color: $blue;
+    color: $error;
+    text-align: right;
+    &#gallery-error{
+        display: block;
+    }
+}
+
+
+

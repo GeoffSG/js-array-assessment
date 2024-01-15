@@ -28,6 +28,9 @@
         background-color: $blue;
         border-bottom: $default-border;
         &:hover {
+            background-color: #5178c6;
+        }
+        &.selected {
             background-color: #385fac;
         }
     }

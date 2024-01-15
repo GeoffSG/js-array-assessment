@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: "icomoon";
-  src: url("../../assets/icons/icomoon.eot?y1pc2i");
-  src: url("../../assets/icons/icomoon.eot?y1pc2i#iefix") format("embedded-opentype"), url("../../assets/icons/icomoon.ttf?y1pc2i") format("truetype"), url("../../assets/icons/icomoon.woff?y1pc2i") format("woff"), url("../../assets/icons/icomoon.svg?y1pc2i#icomoon") format("svg");
+  src: url("../../assets/icons/icomoon.eot?75dotx");
+  src: url("../../assets/icons/icomoon.eot?75dotx#iefix") format("embedded-opentype"), url("../../assets/icons/icomoon.ttf?75dotx") format("truetype"), url("../../assets/icons/icomoon.woff?75dotx") format("woff"), url("../../assets/icons/icomoon.svg?75dotx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -37,6 +37,10 @@
 
 .icon-save:before {
   content: "\e962";
+}
+
+.icon-spinner:before {
+  content: "\e97f";
 }
 
 .icon-search:before {
@@ -103,22 +107,6 @@
   src: url(https://fonts.gstatic.com/s/slabo13px/v15/11hEGp_azEvXZUdSBzzRQKCh2g.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@media (min-width: 320px) {
-  h1 {
-    color: red;
-  }
-}
-@media (min-width: 375px) {
-  h1 {
-    color: blue;
-  }
-}
-@media (min-width: 768px) {
-  h1 {
-    color: green;
-  }
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -495,6 +483,7 @@ main {
 
 .section-main {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: stretch;
   gap: 1rem;
@@ -577,6 +566,9 @@ main {
   border-bottom: 2px solid #111111;
 }
 .data-list-container .list-item:hover {
+  background-color: #5178c6;
+}
+.data-list-container .list-item.selected {
   background-color: #385fac;
 }
 .data-list-container .add-item-form {
@@ -598,6 +590,9 @@ main {
 .input-group:focus-within {
   background-color: #071531;
 }
+.input-group:focus-within + .error-message {
+  background-color: #071531;
+}
 .input-group .input-text {
   background-color: transparent;
   width: 100%;
@@ -612,6 +607,17 @@ main {
 }
 .input-group .input-label {
   padding: 1rem;
+}
+
+.error-message {
+  display: none;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #F24E1E;
+  text-align: right;
+}
+.error-message#gallery-error {
+  display: block;
 }
 
 .section-gallery {
@@ -661,15 +667,37 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .image {
   border: 2px solid #111111;
   border-radius: 1rem;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   background-color: #F8F8F8;
-  color: #111111;
+  font-family: "icomoon";
+  color: #848484;
+  font-size: 5rem;
+  text-align: center;
+}
+.image::after {
+  content: "\e90d";
+}
+.image.loading::after {
+  content: "\e97f";
+  animation: spin 2s linear infinite;
+  z-index: 9;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }/*# sourceMappingURL=app.css.map */

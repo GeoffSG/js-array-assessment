@@ -1,6 +1,8 @@
 .section {
     &-main {
         display: flex;
+        flex-direction: column;
+
         flex-wrap: wrap;
         align-items: stretch;
         gap: 1rem;

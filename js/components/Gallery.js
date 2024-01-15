@@ -1,21 +1,21 @@
-const Gallery = (selectedUserData) => {
+const Gallery = (dataController) => {
     const galleryContainer = $(".gallery-container");
     function init() {
         console.log(galleryContainer);
-
     }
 
-    function html() {
-        //  For each img in userdata, add img to gal-container
-
-        return `<img class="image" src="">`;
+    function update() {
+        const galleryData = dataController.getSelectedEmail().gallery;
+        galleryContainer.html(html(galleryData));
     }
 
-    function render() {
-
+    function html(galleryData) {
+        return galleryData.map((img) => {
+            return `<img class="image" src="${img}" alt=" ">`;
+        });
     }
 
-    return { init };
+    return { init, update };
 }
 
 export default Gallery;

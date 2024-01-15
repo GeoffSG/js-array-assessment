@@ -48,15 +48,3 @@ $breakpoints: (
         @error "ERROR: No valid value for `#{$break}`!";
     }
 }
-
-h1 {
-    @include mq("mobile-s") {
-        color: red;
-    }
-    @include mq("mobile-m") {
-        color: blue;
-    }
-    @include mq("tablet") {
-        color: green;
-    }
-}

@@ -5,14 +5,12 @@ import DataController from "./controllers/DataController.js";
 import FetchController from "./controllers/FetchController.js";
 
 function app() {
-    const dataURL = "";
-    const dc = DataController(dataURL);
-    const dl = DataList(dc, $('.data-list'));
-    const gal = Gallery();
     const fc = FetchController();
-    const imagePicker = ImagePicker(fc);
+    const dc = DataController(fc);
+    const gal = Gallery(dc);
+    const dl = DataList(dc, gal);
+    const imagePicker = ImagePicker(dc, gal);
     
-
     dl.init();
     dl.render();
 
