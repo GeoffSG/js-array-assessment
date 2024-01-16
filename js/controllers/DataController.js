@@ -3,12 +3,14 @@
 const DataController = (fetchController) => {
   const data = [
     {
+      id: 0,
       email: "example@domain.com",
       gallery: [
         "https://fastly.picsum.photos/id/630/200/200.jpg?hmac=X7UBUxsi2YahTLmW0-zKMMPOALeDjY5wPZGTPaGbDhU",
       ],
     },
     {
+      id: 1,
       email: "abc123@domain.com",
       gallery: [
         "https://fastly.picsum.photos/id/429/200/200.jpg?hmac=9FwQwE20mRBTbcAmKXOhnDdpvTgru3vSGriKkpK0kI4",
@@ -27,16 +29,34 @@ const DataController = (fetchController) => {
     return selectedEmailData;
   }
 
-  function filter(criteria) {
-    return data.filter((item) => {
-      //return item.email.toLowerCase().includes(criteria.toLowerCase());
-      return item.email === criteria;
+  function existsEmail(email) {
+    return (
+      data.filter((item) => {
+        return item.email === email;
+      }).length > 0
+    );
+  }
+
+  function existsImage(email, img) {
+    console.log(`${email}\t${img}`);
+    return data.filter((em) => {
+      // console.log(`Filter Image results - em: ${em.email} -- em.gallery: ${em.gallery.join(" ; ")} -- gallery.filter: ${!em.gallery.filter((i) => i === img)} -- ${em.email === email && em.gallery.filter((i) => i === img)}`);
+      console.log(
+        `${em.email === email} && ${
+          em.gallery.filter((i) => i === img).length > 0
+        } = ${
+          em.email === email && em.gallery.filter((i) => i === img).length > 0
+        }`
+      );
+      return (
+        em.email === email && em.gallery.filter((i) => i === img).length > 0
+      );
     });
   }
 
   function addEmail(newEmail) {
-    const filteredData = filter(newEmail);
-    if (filteredData.length > 0) {
+    const filteredData = existsEmail(newEmail);
+    if (filteredData) {
       console.log(`${newEmail} exists!`);
       console.log(data);
       return false;
@@ -49,9 +69,17 @@ const DataController = (fetchController) => {
   function saveImage(imgSrc) {
     if (!selectedEmailData) {
       console.log("ERROR: No email was selected!");
-      return;
+      return {err:"No email was selected!"};
     }
-    selectedEmailData.gallery.push(imgSrc);
+    // console.log(filterImage(selectedEmailData.email, imgSrc));
+    const imageExists = existsImage(selectedEmailData.email, imgSrc);
+    console.log(`imageExists: ${imageExists}`);
+    if (imageExists.length > 0) {
+      console.log("ERROR: Image already exists in selected email!");
+      return {err:"Image already exists in selected email!"};
+    } else {
+      selectedEmailData.gallery.push(imgSrc);
+    }
   }
   async function fetchImage() {
     return await fetchController.fetchImage();
@@ -89,7 +117,7 @@ const DataController = (fetchController) => {
 
   return {
     addEmail,
-    filter,
+    filter: existsEmail,
     data,
     getDataByEmail,
     getGallery,

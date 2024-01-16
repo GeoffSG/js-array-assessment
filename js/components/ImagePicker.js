@@ -40,8 +40,13 @@ function ImagePicker(dataController, gallery) {
       showError("No selected email to save to!");
     } else {
       hideError();
-      dataController.saveImage(fetchedImg);
-      gallery.update();
+      const saveResult = dataController.saveImage(fetchedImg);
+      if(saveResult) {
+        showError(saveResult.err);
+      } else {
+        gallery.update();
+      }
+
     }
   }
 
