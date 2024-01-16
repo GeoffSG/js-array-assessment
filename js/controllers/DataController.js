@@ -29,18 +29,19 @@ const DataController = (fetchController) => {
 
   function filter(criteria) {
     return data.filter((item) => {
-      return item.email.toLowerCase().includes(criteria.toLowerCase());
+      //return item.email.toLowerCase().includes(criteria.toLowerCase());
+      return item.email === criteria;
     });
   }
 
   function addEmail(newEmail) {
     const filteredData = filter(newEmail);
-    if(filteredData.length > 0) {
+    if (filteredData.length > 0) {
       console.log(`${newEmail} exists!`);
       console.log(data);
       return false;
     } else {
-      data.push({email: newEmail, gallery: [""]});
+      data.push({ email: newEmail, gallery: [] });
       return true;
     }
   }
@@ -84,7 +85,7 @@ const DataController = (fetchController) => {
       /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/
     );
     // return email !== "";
-  };
+  }
 
   return {
     addEmail,
