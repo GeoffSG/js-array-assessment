@@ -505,12 +505,14 @@ main {
   background-color: #ceaa24;
   color: #111111;
   text-align: center;
+  cursor: pointer;
 }
 .button:hover {
   background-color: #eecd53;
 }
 .button:disabled {
   background-color: #796312;
+  cursor: auto;
 }
 .button [class^=icon-], .button [class*=" icon-"] {
   position: absolute;
@@ -673,6 +675,12 @@ main {
   gap: 1rem;
   justify-content: center;
   align-items: flex-end;
+}
+.gallery-generator .button-group {
+  max-width: 200px;
+}
+.gallery-generator .button-group .error-message {
+  text-align: center;
 }
 
 .image {

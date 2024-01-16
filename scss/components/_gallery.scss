@@ -43,4 +43,11 @@
     gap: 1rem;
     justify-content: center;
     align-items: flex-end;
+
+    .button-group {
+        max-width: 200px;
+        .error-message {
+            text-align: center;
+        }
+    }
 }

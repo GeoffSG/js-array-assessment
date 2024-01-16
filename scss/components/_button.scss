@@ -7,11 +7,13 @@
     background-color: $gold;
     color: $black;
     text-align: center;
+    cursor: pointer;
     &:hover {
         background-color: $lightgold;
     }
     &:disabled {
         background-color: $darkgold;
+        cursor:auto;
     }
 
     @include icon-style {
