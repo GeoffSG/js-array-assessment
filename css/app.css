@@ -668,6 +668,34 @@ main {
     grid-template-columns: repeat(3, 200px);
   }
 }
+.gallery .gallery-container .gallery-image {
+  position: relative;
+}
+.gallery .gallery-container .gallery-image .image-delete {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 1rem;
+  border: 2px solid #111111;
+  font-family: "icomoon";
+  font-size: 5rem;
+  text-align: center;
+  color: #F24E1E;
+  background-color: rgba(248, 248, 248, 0.75);
+  opacity: 0;
+  transition: 0.1s;
+}
+.gallery .gallery-container .gallery-image .image-delete::after {
+  content: "\e9ac";
+}
+.gallery .gallery-container .gallery-image .image-delete:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 
 .gallery-generator {
   display: flex;

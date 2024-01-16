@@ -10,11 +10,21 @@ const Gallery = (dataController) => {
     $(".gallery-title").html(
       `<span class="icon-gallery"></span> ${dataController.getSelectedEmail().email}'s Gallery`
     );
+    $(".gallery-image").on("click", (e) => {
+        const img = $(e.currentTarget).children("img").attr("src");
+        dataController.deleteImage(img);
+        update();
+    });
   }
 
   function html(galleryData) {
     return galleryData.map((img) => {
-      return `<img class="image" src="${img}" alt=" ">`;
+      return `
+      <div class="gallery-image">
+        <img class="image" src="${img}" alt=" ">
+        <div class="image-delete"> </div>
+      </div>
+      `;
     });
   }
 

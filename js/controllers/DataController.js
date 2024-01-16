@@ -13,6 +13,7 @@ const DataController = (fetchController) => {
       id: 1,
       email: "abc123@domain.com",
       gallery: [
+        "https://fastly.picsum.photos/id/630/200/200.jpg?hmac=X7UBUxsi2YahTLmW0-zKMMPOALeDjY5wPZGTPaGbDhU",
         "https://fastly.picsum.photos/id/429/200/200.jpg?hmac=9FwQwE20mRBTbcAmKXOhnDdpvTgru3vSGriKkpK0kI4",
         "https://fastly.picsum.photos/id/466/200/200.jpg?hmac=VydiBydfVntkv5HY6NXsWaNXDedBW2VWNmm8MqF5Cew",
       ],
@@ -69,18 +70,28 @@ const DataController = (fetchController) => {
   function saveImage(imgSrc) {
     if (!selectedEmailData) {
       console.log("ERROR: No email was selected!");
-      return {err:"No email was selected!"};
+      return { err: "No email was selected!" };
     }
     // console.log(filterImage(selectedEmailData.email, imgSrc));
     const imageExists = existsImage(selectedEmailData.email, imgSrc);
     console.log(`imageExists: ${imageExists}`);
     if (imageExists.length > 0) {
       console.log("ERROR: Image already exists in selected email!");
-      return {err:"Image already exists in selected email!"};
+      return { err: "Image already exists in selected email!" };
     } else {
       selectedEmailData.gallery.push(imgSrc);
     }
   }
+
+  function deleteImage(img) {
+    data.forEach((d) => {
+      if(d.email === selectedEmailData.email) {
+        d.gallery = d.gallery.filter((i) => i !== img);
+      }
+    });
+    console.log(data);
+  }
+
   async function fetchImage() {
     return await fetchController.fetchImage();
   }
@@ -126,6 +137,7 @@ const DataController = (fetchController) => {
     selectEmail,
     getSelectedEmail,
     validateEmail,
+    deleteImage,
   };
 };
 

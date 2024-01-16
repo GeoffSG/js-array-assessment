@@ -34,6 +34,35 @@
         @include mq('laptop') {
             grid-template-columns: repeat(3, 200px);
         }
+
+        .gallery-image {
+            position: relative;
+            .image-delete {
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 200px;
+                border-radius: 1rem;
+                border: $default-border;
+                font-family: 'icomoon';
+                font-size: 5rem;
+                text-align: center;
+                color: $error;
+                background-color: rgba($white, .75);
+                opacity: 0;
+                transition: .1s;
+                &::after {
+                    content: '\e9ac';
+                }
+                &:hover {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
 
