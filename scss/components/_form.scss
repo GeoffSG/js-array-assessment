@@ -33,11 +33,12 @@
     display: none;
     padding: 0.5rem;
     font-size: 0.9rem;
-    // background-color: $blue;
+    background-color: $blue;
     color: $error;
     text-align: right;
     &#gallery-error{
         display: block;
+        background-color: transparent;
     }
 }
 

@@ -17,17 +17,11 @@
     @include gold-border;
     padding: 0 1rem;
     width: auto;
-    // max-width: 700px;
     background-color: $gallery-bg;
-
-    
 
     .gallery-container {
         overflow: auto;
-        // display: flex;
-        // flex-wrap: wrap;
         justify-content: center;
-        // gap: 1rem;
         display: grid;
         grid-template-columns: repeat(1, 200px);
         gap: 1rem;

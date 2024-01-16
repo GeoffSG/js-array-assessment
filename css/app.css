@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: "icomoon";
-  src: url("../../assets/icons/icomoon.eot?75dotx");
-  src: url("../../assets/icons/icomoon.eot?75dotx#iefix") format("embedded-opentype"), url("../../assets/icons/icomoon.ttf?75dotx") format("truetype"), url("../../assets/icons/icomoon.woff?75dotx") format("woff"), url("../../assets/icons/icomoon.svg?75dotx#icomoon") format("svg");
+  src: url("../assets/icons/icomoon.eot?75dotx");
+  src: url("../assets/icons/icomoon.eot?75dotx#iefix") format("embedded-opentype"), url("../assets/icons/icomoon.ttf?75dotx") format("truetype"), url("../assets/icons/icomoon.woff?75dotx") format("woff"), url("../assets/icons/icomoon.svg?75dotx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -422,7 +422,7 @@ template {
 }
 
 body {
-  background-color: #071531;
+  background-color: #0f224a;
   color: #F8F8F8;
 }
 
@@ -485,13 +485,15 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: center;
   gap: 1rem;
 }
 .section-emails-list {
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 90%;
+  max-width: 40rem;
 }
 
 .button {
@@ -542,9 +544,10 @@ main {
   display: flex;
   flex-direction: column;
   max-height: 40rem;
+  width: 100%;
+  max-width: 40rem;
 }
 .data-list-container .list-search {
-  border-bottom: 2px solid #ceaa24;
   border-radius: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -556,13 +559,16 @@ main {
   margin: 0;
   padding: 0;
   overflow: auto;
-  background-color: #0e285d;
+  background-color: #020b1d;
+  min-height: 20rem;
+  border-top: 2px solid #ceaa24;
+  border-bottom: 2px solid #ceaa24;
 }
 .data-list-container .list-item {
   display: block;
   list-style: none;
   padding: 1rem;
-  background-color: #0e285d;
+  background-color: #0f337b;
   border-bottom: 2px solid #111111;
 }
 .data-list-container .list-item:hover {
@@ -570,9 +576,6 @@ main {
 }
 .data-list-container .list-item.selected {
   background-color: #385fac;
-}
-.data-list-container .add-item-form {
-  border-top: 2px solid #ceaa24;
 }
 .data-list-container .add-item-form .button {
   border-radius: 0;
@@ -585,13 +588,13 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #0e285d;
+  background-color: #0f337b;
 }
 .input-group:focus-within {
-  background-color: #071531;
+  background-color: #0f224a;
 }
 .input-group:focus-within + .error-message {
-  background-color: #071531;
+  background-color: #0f224a;
 }
 .input-group .input-text {
   background-color: transparent;
@@ -603,7 +606,7 @@ main {
 .input-group .input-text:focus {
   border: 0;
   outline: 0;
-  background-color: #071531;
+  background-color: #0f224a;
 }
 .input-group .input-label {
   padding: 1rem;
@@ -613,11 +616,13 @@ main {
   display: none;
   padding: 0.5rem;
   font-size: 0.9rem;
+  background-color: #0f337b;
   color: #F24E1E;
   text-align: right;
 }
 .error-message#gallery-error {
   display: block;
+  background-color: transparent;
 }
 
 .section-gallery {
