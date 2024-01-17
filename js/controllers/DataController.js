@@ -30,6 +30,14 @@ const DataController = (fetchController) => {
     return selectedEmailData;
   }
 
+  function filter(email) {
+    return (
+      data.filter((item) => {
+        return item.email.includes(email);
+      })
+    );
+  }
+
   function existsEmail(email) {
     return (
       data.filter((item) => {
@@ -128,7 +136,8 @@ const DataController = (fetchController) => {
 
   return {
     addEmail,
-    filter: existsEmail,
+    filter,
+    existsEmail,
     data,
     getDataByEmail,
     getGallery,
