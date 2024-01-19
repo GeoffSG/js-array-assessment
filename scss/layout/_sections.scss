@@ -1,7 +1,7 @@
 .section {
     &-main {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
+        grid-template-columns: repeat( auto-fit, minmax(250px, auto) );
         justify-content: center;
         gap: 1rem;
     }
