@@ -27,8 +27,10 @@ function ImagePicker(dataController, gallery) {
 
   async function getNewImage() {
     imagePickerElement.addClass("loading");
+    $("#button-image-save").prop("disabled", true);
     fetchedImg = await dataController.fetchImage();
     imagePickerElement.attr("src", fetchedImg);
+    $("#button-image-save").prop("disabled", false);
     imagePickerElement.removeClass("loading");
   }
 
