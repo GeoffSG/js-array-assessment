@@ -482,18 +482,19 @@ main {
 }
 
 .section-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  justify-content: center;
   gap: 1rem;
 }
 .section-emails-list {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  width: 90%;
-  max-width: 40rem;
+}
+.section-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .button {
@@ -627,21 +628,6 @@ main {
   background-color: transparent;
 }
 
-.section-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  flex: 3;
-}
-
-.section-gallery-generator {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1rem;
-}
-
 .gallery {
   border: 2px solid #ceaa24;
   border-radius: 1rem;
@@ -653,20 +639,10 @@ main {
   overflow: auto;
   justify-content: center;
   display: grid;
-  grid-template-columns: repeat(1, 200px);
+  grid-template-columns: repeat(auto-fit, 200px);
   gap: 1rem;
   padding: 1rem 0;
   height: 30rem;
-}
-@media (min-width: 768px) {
-  .gallery .gallery-container {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-@media (min-width: 1024px) {
-  .gallery .gallery-container {
-    grid-template-columns: repeat(3, 200px);
-  }
 }
 .gallery .gallery-container .gallery-image {
   position: relative;
@@ -719,6 +695,7 @@ main {
   align-items: center;
   width: 200px;
   height: 200px;
+  min-width: 200px;
   background-color: #F8F8F8;
   font-family: "icomoon";
   color: #848484;

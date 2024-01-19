@@ -11,7 +11,7 @@ const DataList = (dataController, gallery) => {
 
   function updateEmailStatusHTML(valid) {
     $("#email-status").html(
-      `<span class="icon-${valid ? "success" : "error"}"></span>`
+      `<span class="icon-${valid ? 'success' : 'error'}"></span>`
     );
   }
 

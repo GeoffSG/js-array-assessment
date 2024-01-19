@@ -4,12 +4,16 @@ function ImagePicker(dataController, gallery) {
 
   function init() {
     $("#button-image-new").on("click", (e) => {
-      clearElement();
+      clearImage();
       getNewImage();
     });
 
     $("#button-image-save").on("click", (e) => {
       saveImage();
+    });
+
+    $(document).ready(() => {
+      getNewImage();
     });
   }
 
@@ -26,10 +30,9 @@ function ImagePicker(dataController, gallery) {
     fetchedImg = await dataController.fetchImage();
     imagePickerElement.attr("src", fetchedImg);
     imagePickerElement.removeClass("loading");
-
   }
 
-  function clearElement() {
+  function clearImage() {
     imagePickerElement.attr("src", "");
   }
 
@@ -41,12 +44,11 @@ function ImagePicker(dataController, gallery) {
     } else {
       hideError();
       const saveResult = dataController.saveImage(fetchedImg);
-      if(saveResult) {
+      if (saveResult) {
         showError(saveResult.err);
       } else {
         gallery.update();
       }
-
     }
   }
 

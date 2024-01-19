@@ -1,17 +1,20 @@
 .section {
     &-main {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(300px, auto) );
+        justify-content: center;
         gap: 1rem;
     }
 
     &-emails-list {
         display: flex;
         flex-direction: column;
-        flex: 1;
-        width: 90%;
-        max-width: 40rem;
     }
+
+    &-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
 }
